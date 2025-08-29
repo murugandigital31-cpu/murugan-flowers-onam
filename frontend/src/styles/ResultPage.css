@@ -1,0 +1,373 @@
+.result-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.page-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: var(--dark-color);
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.page-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.result-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.preview-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.preview-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  margin: 0 auto;
+  display: block;
+}
+
+.design-review {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.design-review h3 {
+  color: var(--dark-color);
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.design-review p {
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 14px;
+}
+
+.details-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.card-title {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 24px;
+  color: var(--dark-color);
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.card-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
+}
+
+/* Pricing Summary Card */
+.pricing-summary {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border: 1px solid #4CAF50;
+}
+
+.pricing-breakdown {
+  text-align: center;
+}
+
+.total-price-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.price-label {
+  font-size: 18px;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.price-value {
+  font-size: 36px;
+  font-weight: bold;
+  color: #1b5e20;
+}
+
+.pricing-note {
+  font-size: 14px;
+  color: #388e3c;
+  margin: 0;
+  font-style: italic;
+}
+
+.flower-list {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.flower-list th,
+.flower-list td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.flower-list th {
+  background-color: var(--light-color);
+  font-weight: 600;
+}
+
+.flower-list tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.total-row {
+  font-weight: bold;
+  font-size: 18px;
+  background-color: #f9f9f9;
+}
+
+.total-row td {
+  border-top: 2px solid var(--border-color);
+}
+
+.colors-detected h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.color-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.color-tag {
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.actions .btn {
+  min-width: 150px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.actions .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Pricing Explanation */
+.pricing-explanation {
+  background: #fff8e1;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.pricing-explanation h3 {
+  color: #ff8f00;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.pricing-explanation p {
+  color: #5d4037;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Share Modal Styles */
+.share-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.share-modal {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.share-modal h3 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: var(--dark-color);
+}
+
+.share-options {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.share-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.share-option:hover {
+  transform: translateY(-5px);
+}
+
+.share-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.whatsapp-icon {
+  background-color: #25D366;
+}
+
+.email-icon {
+  background-color: #EA4335;
+}
+
+.link-icon {
+  background-color: #607D8B;
+}
+
+.share-option span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+}
+
+.close-modal:hover {
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .result-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .page-title {
+    font-size: 28px;
+  }
+  
+  .actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .actions .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .price-value {
+    font-size: 28px;
+  }
+  
+  .share-modal {
+    padding: 20px;
+  }
+  
+  .share-options {
+    gap: 20px;
+  }
+  
+  .share-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+}

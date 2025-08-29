@@ -1,0 +1,282 @@
+.contact-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.page-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: var(--dark-color);
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.page-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, #4CAF50, #8BC34A);
+  border-radius: 2px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-info {
+  margin-bottom: 40px;
+}
+
+.whatsapp-contact {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.whatsapp-contact h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #2e7d32;
+}
+
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #25D366;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-icon {
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+.branches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.branch-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border-top: 4px solid #4CAF50;
+}
+
+.branch-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.branch-name {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #2e7d32;
+  font-size: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.branch-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+}
+
+.contact-icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.contact-link {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: #4CAF50;
+}
+
+.whatsapp-link {
+  position: relative;
+}
+
+.whatsapp-link::after {
+  content: 'WhatsApp';
+  position: absolute;
+  top: -8px;
+  right: -65px;
+  background-color: #25D366;
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.whatsapp-link:hover::after {
+  opacity: 1;
+}
+
+.store-hours {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.store-hours h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #2e7d32;
+  text-align: center;
+}
+
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hours-table td {
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.hours-table tr:last-child td {
+  border-bottom: none;
+}
+
+.hours-table td:first-child {
+  font-weight: 600;
+}
+
+.hours-table td:last-child {
+  text-align: right;
+}
+
+.traditional-message {
+  margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+}
+
+.traditional-border {
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.traditional-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #4CAF50, #8BC34A, #4CAF50, #8BC34A);
+  z-index: -1;
+  border-radius: 14px;
+}
+
+.traditional-border p {
+  margin: 0;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 28px;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+  }
+  
+  .branches-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .whatsapp-button {
+    width: 100%;
+    justify-content: center;
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-page {
+    padding: 15px;
+  }
+  
+  .page-title {
+    font-size: 24px;
+  }
+  
+  .subtitle {
+    font-size: 14px;
+  }
+  
+  .branch-card {
+    padding: 15px;
+  }
+  
+  .branch-name {
+    font-size: 18px;
+  }
+  
+  .contact-icon {
+    font-size: 16px;
+  }
+  
+  .whatsapp-button {
+    font-size: 14px;
+  }
+  
+  .traditional-border {
+    padding: 15px;
+  }
+  
+  .traditional-border p {
+    font-size: 14px;
+  }
+}
