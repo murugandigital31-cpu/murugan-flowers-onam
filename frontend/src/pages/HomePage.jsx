@@ -352,7 +352,7 @@ const HomePage = () => {
                 onMouseEnter={() => setHoveredFlower(index)}
                 onMouseLeave={() => setHoveredFlower(null)}
               >
-                <div className="flower-image-container">
+                <div className="flower-image-container" onClick={() => openQuickView(flower)}>
                   <img 
                     src={flower.image} 
                     alt={flower.name} 
@@ -370,30 +370,17 @@ const HomePage = () => {
                   <p className="flower-description">{flower.description}</p>
                   <div className="flower-footer">
                     <span className="flower-color-label">Color: {flower.color}</span>
-                    <button 
-                      className="add-to-cart-btn"
-                      onClick={() => addToCart(flower)}
-                    >
-                      Add to Cart
-                    </button>
                   </div>
                 </div>
-                {hoveredFlower === index && (
-                  <div className="flower-card-actions">
-                    <button 
-                      className="quick-view-btn"
-                      onClick={() => openQuickView(flower)}
-                    >
-                      Quick View
-                    </button>
-                    <button 
-                      className="add-to-cart-btn-hover"
-                      onClick={() => addToCart(flower)}
-                    >
-                      Add to Cart
-                    </button>
-                  </div>
-                )}
+                {/* Always show the action buttons on mobile and on hover */}
+                <div className="flower-card-actions">
+                  <button 
+                    className="add-to-cart-btn-hover"
+                    onClick={() => addToCart(flower)}
+                  >
+                    Add to Cart
+                  </button>
+                </div>
               </div>
             ))}
           </div>

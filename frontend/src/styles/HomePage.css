@@ -1,6 +1,6 @@
 .home-page {
   padding: 20px 0;
-  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  background: linear-gradient(135deg, rgba(232, 245, 233, 0.95) 0%, rgba(200, 230, 201, 0.95) 100%);
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
   position: relative;
@@ -25,7 +25,7 @@
 
 .bg-decoration-img {
   position: absolute;
-  opacity: 1; /* Full opacity for visibility */
+  opacity: 0.6; /* Reduced opacity for better content visibility */
   z-index: 0; /* Ensure it's above the background but below content */
   transition: opacity 0.3s ease;
   animation-duration: 15s;
@@ -136,6 +136,9 @@
   padding: 0 20px;
   position: relative;
   z-index: 1;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* Header with Logo Styling */
@@ -224,6 +227,10 @@
   margin-bottom: 60px;
   position: relative;
   z-index: 1; /* Ensure this section is above background images */
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .section-title {
@@ -293,6 +300,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 25px;
+  padding: 5px;
 }
 
 .flower-card {
@@ -305,6 +313,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 25px; /* Add margin to separate cards */
 }
 
 .flower-card:hover {
@@ -321,9 +330,30 @@
 
 .flower-image-container {
   width: 100%;
-  height: 180px;
+  height: 250px; /* Increased height for better visibility */
   overflow: hidden;
   position: relative;
+  cursor: pointer; /* Add cursor pointer to indicate clickable */
+}
+
+.flower-image-container:after {
+  content: '🔍';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.flower-image-container:hover:after {
+  opacity: 1;
 }
 
 .flower-badges {
@@ -349,8 +379,10 @@
 .flower-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* Changed from cover to contain to show full image */
   transition: transform 0.5s ease;
+  padding: 5px;
+  background-color: white;
 }
 
 .flower-card:hover .flower-image {
@@ -416,8 +448,9 @@
   color: white;
   border: none;
   border-radius: 20px;
-  padding: 6px 14px;
-  font-size: 13px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -439,6 +472,7 @@
   justify-content: center;
   gap: 10px;
   animation: fadeIn 0.3s ease;
+  z-index: 5; /* Add z-index to ensure buttons are clickable */
 }
 
 .quick-view-btn,
@@ -964,6 +998,7 @@
   overflow-y: auto;
   padding: 30px;
   animation: scaleIn 0.3s ease;
+  margin: 20px auto; /* Center the modal and add margin */
 }
 
 @keyframes scaleIn {
@@ -998,24 +1033,32 @@
 .quick-view-layout {
   display: flex;
   gap: 30px;
+  flex-wrap: wrap;
 }
 
 .quick-view-image {
   flex: 1;
-  max-width: 450px;
-  height: 350px;
+  min-width: 300px;
+  height: 400px;
   overflow: hidden;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
 }
 
 .quick-view-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* Changed from cover to contain to show full image */
+  background-color: #f9f9f9;
+  padding: 10px;
 }
 
 .quick-view-details {
   flex: 1;
+  min-width: 300px;
 }
 
 .quick-view-details h2 {
@@ -1123,6 +1166,8 @@
 @media (max-width: 480px) {
   .flower-grid {
     grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
   }
   
   .main-title {
@@ -1154,12 +1199,19 @@
   }
   
   .flower-image-container {
-    height: 220px;
+    height: 300px; /* Increased height for mobile */
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .flower-image {
     object-fit: contain;
     background-color: #fff;
+    max-height: 300px;
+    max-width: 100%;
+    padding: 5px;
   }
   
   .flower-description {
@@ -1171,8 +1223,15 @@
     padding: 3px 6px;
   }
   
+  .flower-card {
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  }
+  
   .flower-info {
     padding: 15px;
+    background-color: white;
   }
   
   .quick-view-content {
@@ -1249,52 +1308,45 @@
     font-size: 20px;
   }
   
-  .checkout-btn {
-    padding: 10px;
-    font-size: 14px;
+  /* Ensure only one Add to Cart button is visible on mobile */
+  .flower-footer .add-to-cart-btn {
+    display: none;
   }
   
   .flower-card-actions {
-    flex-direction: column;
-    gap: 5px;
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    padding: 0 15px 15px;
   }
   
-  .add-to-cart-btn-hover,
-  .quick-view-btn {
-    width: 80%;
-    margin: 0 auto;
+  .add-to-cart-btn-hover {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
+/* Mobile view adjustments for quick view */
+@media (max-width: 480px) {
+  .quick-view-modal {
+    padding: 10px;
   }
   
-  .add-to-cart-btn {
-    padding: 4px 10px;
-    font-size: 12px;
-  }
-  
-  /* Quick view responsive styles */
-  .quick-view-layout {
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .quick-view-image {
-    height: 200px;
+  .quick-view-content {
+    padding: 15px;
+    width: 95%;
+    max-height: 95vh;
   }
   
   .close-modal {
     top: 10px;
     right: 10px;
-    font-size: 20px;
-  }
-  
-  .quantity-selector {
-    max-width: 100%;
-  }
-  
-  .quick-view-details h2 {
-    font-size: 20px;
-  }
-  
-  .quick-view-price {
-    font-size: 18px;
   }
 }
